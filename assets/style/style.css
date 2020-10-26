@@ -1,0 +1,268 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 10vh;
+  background-image: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  color: #e2e2e2;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e2e2e2;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #e2e2e2;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.home,
+.merch,
+.website,
+.profile,
+.about {
+  height: 90vh;
+  position: absolute;
+  width: 100%;
+}
+
+.home-content,
+.merch-content,
+.website-content,
+.profile-content,
+.about-content {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.home-content img,
+.merch-content img,
+.website-content img,
+.profile-content img,
+.about-content img {
+  height: 70%;
+}
+
+.home-content h1,
+.merch-content h1,
+.website-content h1,
+.profile-content h1,
+.about-content h1 {
+  font-size: 50px;
+  margin: 30px 0px;
+}
+
+.home-content p,
+.merch-content p,
+.website-content p,
+.profile-content p,
+.about-content p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+  .home-content,
+  .merch-content,
+  .website-content,
+  .profile-content,
+  .about-content {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home-content img,
+  .merch-content img,
+  .website-content img,
+  .profile-content img,
+  .about-content img {
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .home-content,
+  .merch-content,
+  .website-content,
+  .profile-content,
+  .about-content {
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home-content img,
+  .merch-content img,
+  .website-content img,
+  .profile-content img,
+  .about-content img {
+    height: 40%;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 90vh;
+    top: 10vh;
+    background-image: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+    z-index: 1;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links.open {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+          transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+          transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.home {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff8177), color-stop(0%, #ff867a), color-stop(21%, #ff8c7f), color-stop(52%, #f99185), color-stop(78%, #cf556c), to(#b12a5b));
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+
+.merch {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.website {
+  background-image: -webkit-gradient(linear, left top, right top, from(#3ab5b0), color-stop(31%, #3d99be), to(#56317a));
+  background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+}
+
+.profile {
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+.about {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2af598), to(#009efd));
+  background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+}
+/*# sourceMappingURL=style.css.map */
